@@ -1,6 +1,6 @@
 <div class="tab">
   <button id="step1" routerLink="" routerLinkActive="active">Step 1</button>
-  <button id="step2" [disabled]="carSummary?.code == ''" routerLink="config" routerLinkActive="active">Step 2</button>
-  <button id="step3" [disabled]="carSummary?.config?.description == ''" routerLink="summary" routerLinkActive="active">Step 3</button>
+  <button id="step2" [disabled]="carSummary.code == ''" routerLink="config" routerLinkActive="active">Step 2</button>
+  <button id="step3" [disabled]="carSummary.config.description == ''" routerLink="summary" routerLinkActive="active">Step 3</button>
 </div>
 <router-outlet></router-outlet>

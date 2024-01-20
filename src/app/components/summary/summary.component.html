@@ -1,24 +1,24 @@
 <h2>Step 3: Summary</h2>
-<h4>Your Tesla {{carSummary?.description}}</h4>
+<h4>Your Tesla {{carSummary.description}}</h4>
 <div>
     <div>
         <div class="left">
-            <label>{{carSummary?.config?.description}}</label>
+            <label>{{carSummary.config.description}}</label>
             <div class="small-font mgn-left">
                 <span>Range: </span>
-                <span>{{carSummary?.config?.range}} miles - </span>
+                <span>{{carSummary.config.range}} miles - </span>
                 <span>Max speed: </span>
-                <span>{{carSummary?.config?.speed}}</span>
+                <span>{{carSummary.config.speed}}</span>
             </div>
         </div>
-        <div class="right">{{carSummary?.config?.price | currency}}</div>
+        <div class="right">{{carSummary.config.price | currency}}</div>
     </div>
 
     <div>
         <div class="left">
-            <label>{{carSummary?.color?.description}} Color</label>
+            <label>{{carSummary.color.description}} Color</label>
         </div>
-        <div class="right">{{carSummary?.color?.price | currency}}</div>
+        <div class="right">{{carSummary.color.price | currency}}</div>
     </div>
 
     <div *ngIf="carSummary?.towHitch">
@@ -45,32 +45,3 @@
 <div>
     <img *ngIf="selectedCarImageUrl != ''" src="{{selectedCarImageUrl}}" alt="Model Image">
 </div>
-    <!-- <div id="modelSelect">
-    <label>Config:</label>
-    <select id="configSelect" #cfg (change)="onConfigSelect(cfg.value)">
-        <option value="none" disabled selected>Choose...</option>
-        <option *ngFor="let carConfig of carOption?.configs" [selected]="carConfig?.description == carSummary?.config?.description" [value]="carConfig?.description">{{carConfig?.description}}</option>
-    </select>
-</div>
-<div *ngIf="selectedCarConfig">
-    <span>Range: </span>
-    <span>{{selectedCarConfig?.range}} miles - </span>
-    <span>Max speed: </span>
-    <span>{{selectedCarConfig?.speed}} - </span>
-    <span>Cost: </span>
-    <span>${{selectedCarConfig?.price}}</span>
-</div>
-
-<div *ngIf="carOption?.towHitch">
-    <div *ngIf="carOption?.towHitch || carOption?.yoke">
-        <label>Tow hitch? </label>
-        <input id="includeTow" name="towHitch" (change)="onOptionsChecked($event)" type="checkbox" [checked]="carSummary?.towHitch">
-    </div>
-    <div *ngIf="carOption?.yoke">
-        <label>Yoke steering wheel? </label>
-        <input id="includeYoke" name="yoke" (change)="onOptionsChecked($event)" type="checkbox" [checked]="carSummary?.yoke">
-    </div>
-</div>
-<div>
-    <img *ngIf="selectedCarImageUrl != ''" src="{{selectedCarImageUrl}}" alt="Model Image">
-</div> -->

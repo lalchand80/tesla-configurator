@@ -3,13 +3,13 @@
     <label>Model:</label>
     <select #cm (change)="onModelSelect(cm.value)">
         <option value="none" disabled selected>Choose...</option>
-        <option *ngFor="let carModel of carModels" [selected]="carModel?.code == carSummary?.code" [value]="carModel?.code">{{carModel?.code}}</option>
+        <option *ngFor="let carModel of carModels" [selected]="carModel?.code == carSummary.code" [value]="carModel?.code">{{carModel?.code}}</option>
     </select>
 </div>
 <div id="colorSelect" *ngIf="carSummary?.code != '' && carSummary?.color?.description != ''" class="inline">
     <label>Color:</label>
     <select #cc (change)="onColorSelect(cc.value)">
-        <option *ngFor="let carColor of selectedCarModel?.colors" [selected]="carColor?.description == carSummary?.color?.description" [value]="carColor?.code">{{carColor?.description}}</option>
+        <option *ngFor="let carColor of selectedCarModel?.colors" [selected]="carColor?.description == carSummary.color.description" [value]="carColor?.code">{{carColor?.description}}</option>
     </select>
 </div>
 <div>

@@ -3,26 +3,26 @@
     <label>Config:</label>
     <select id="configSelect" #cfg (change)="onConfigSelect(cfg.value)">
         <option value="none" disabled selected>Choose...</option>
-        <option *ngFor="let carConfig of carOption?.configs" [selected]="carConfig?.description == carSummary?.config?.description" [value]="carConfig?.description">{{carConfig?.description}}</option>
+        <option *ngFor="let carConfig of carOption?.configs" [selected]="carConfig?.description == carSummary.config.description" [value]="carConfig?.description">{{carConfig?.description}}</option>
     </select>
 </div>
 <div class="mgn-left small-font" *ngIf="selectedCarConfig">
     <span>Range: </span>
-    <span>{{selectedCarConfig?.range}} miles - </span>
+    <span>{{selectedCarConfig.range}} miles - </span>
     <span>Max speed: </span>
-    <span>{{selectedCarConfig?.speed}} - </span>
+    <span>{{selectedCarConfig.speed}} - </span>
     <span>Cost: </span>
-    <span>{{selectedCarConfig?.price | currency}}</span>
+    <span>{{selectedCarConfig.price | currency}}</span>
 </div>
 
 <div *ngIf="carOption?.towHitch">
     <div *ngIf="carOption?.towHitch || carOption?.yoke">
         <label>Tow hitch? </label>
-        <input id="includeTow" name="towHitch" (change)="onOptionsChecked($event)" type="checkbox" [checked]="carSummary?.towHitch">
+        <input id="includeTow" name="towHitch" (change)="onOptionsChecked($event)" type="checkbox" [checked]="carSummary.towHitch">
     </div>
     <div *ngIf="carOption?.yoke">
         <label>Yoke steering wheel? </label>
-        <input id="includeYoke" name="yoke" (change)="onOptionsChecked($event)" type="checkbox" [checked]="carSummary?.yoke">
+        <input id="includeYoke" name="yoke" (change)="onOptionsChecked($event)" type="checkbox" [checked]="carSummary.yoke">
     </div>
 </div>
 <div>
