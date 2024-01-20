@@ -1,15 +1,22 @@
-import {Component} from '@angular/core';
-import {AsyncPipe, JsonPipe} from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { CommonService } from './services/common.service';
+import { CarSummary } from './models/car-model.model';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [AsyncPipe, JsonPipe],
-  template: `
-    <h1>Hello from {{ name }}!</h1>
-  `,
+  imports: [RouterModule],
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  name = 'Angular';
+export class AppComponent implements OnInit{
+  public carSummary!: CarSummary;
 
+  constructor(private commonService: CommonService){}
+  
+  ngOnInit(): void {
+    this.commonService.getCarSummary().subscribe(response => {
+      this.carSummary = response;
+    });
+  }
 }
